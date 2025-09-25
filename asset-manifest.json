@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/idle-kv/static/js/main.fff21e4a.js",
+    "index.html": "/idle-kv/index.html",
+    "main.fff21e4a.js.map": "/idle-kv/static/js/main.fff21e4a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fff21e4a.js"
+  ]
+}
