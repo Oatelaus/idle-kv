@@ -1,0 +1,22 @@
+{
+  "name": "idle-kv",
+  "version": "1.0.0",
+  "description": "A web UI for editing base64 key-value pairs for idle superhero.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://Oatelaus.github.io/idle-kv",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.0.0"
+  }
+}
