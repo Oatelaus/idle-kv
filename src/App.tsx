@@ -9,9 +9,9 @@ import {
 export default function App() {
   const [base64, setBase64] = useState("");
   const [prefix, setPrefix] = useState("");
-  const [kvObj, setKvObj] = useState<Record<string, string>>({});
+  const [kvObj, setKvObj] = useState<Record<string, string>>(() => ({}));
   const [decoded, setDecoded] = useState("");
-  const [edited, setEdited] = useState<Record<string, string>>({});
+  const [edited, setEdited] = useState<Record<string, string>>(() => ({}));
   const [outputBase64, setOutputBase64] = useState("");
 
   // Handle decoding
