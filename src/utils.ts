@@ -1,18 +1,32 @@
-// Remove first two characters before decoding
+// Helper functions for base64 encoding/decoding of UTF-8
+function base64EncodeUTF8(str: string): string {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary);
+}
+
+function base64DecodeUTF8(base64: string): string {
+  const binary = atob(base64);
+  const bytes = new Uint8Array([...binary].map(char => char.charCodeAt(0)));
+  return new TextDecoder().decode(bytes);
+}
+
+// Remove first two characters before decoding (UTF-8)
 export function decodeBase64WithPrefix(input: string): { prefix: string, decoded: string } {
   if (input.length < 2) return { prefix: "", decoded: "" };
   const prefix = input.substring(0, 2);
   const base64 = input.substring(2);
   try {
-    return { prefix, decoded: atob(base64) };
+    return { prefix, decoded: base64DecodeUTF8(base64) };
   } catch (e) {
     return { prefix, decoded: "" };
   }
 }
 
-// Encode string to base64 and add prefix
+// Encode string to base64 (UTF-8) and add prefix
 export function encodeBase64WithPrefix(prefix: string, input: string): string {
-  return prefix + btoa(input);
+  return prefix + base64EncodeUTF8(input);
 }
 
 // Parse the custom key-value string to an object
