@@ -8,7 +8,10 @@ function base64EncodeUTF8(str: string): string {
 
 function base64DecodeUTF8(base64: string): string {
   const binary = atob(base64);
-  const bytes = new Uint8Array([...binary].map(char => char.charCodeAt(0)));
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
   return new TextDecoder().decode(bytes);
 }
 
