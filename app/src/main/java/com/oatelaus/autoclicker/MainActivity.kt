@@ -42,15 +42,25 @@ class MainActivity : AppCompatActivity() {
             }
 
             val intent = Intent(this, OverlayService::class.java)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                startForegroundService(intent)
-            } else {
-                startService(intent)
+            try {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(intent)
+                } else {
+                    startService(intent)
+                }
+            } catch (_: IllegalStateException) {
+                showOverlayStartError()
+            } catch (_: SecurityException) {
+                showOverlayStartError()
             }
         }
 
         binding.stopOverlayButton.setOnClickListener {
             stopService(Intent(this, OverlayService::class.java))
         }
+    }
+
+    private fun showOverlayStartError() {
+        Toast.makeText(this, R.string.failed_to_start_overlay, Toast.LENGTH_LONG).show()
     }
 }
