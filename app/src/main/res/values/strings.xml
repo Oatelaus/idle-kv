@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Idle KV Auto Clicker</string>
+    <string name="accessibility_service_label">Idle KV Auto Clicker Service</string>
+    <string name="instructions">1) Enable accessibility service.\n2) Allow display over other apps.\n3) Start auto clicker and hold anywhere on screen to tap rapidly at that position.</string>
+    <string name="open_accessibility_settings">Open Accessibility Settings</string>
+    <string name="enable_overlay_permission">Enable Overlay Permission</string>
+    <string name="start_auto_clicker">Start Auto Clicker Overlay</string>
+    <string name="stop_auto_clicker">Stop Auto Clicker Overlay</string>
+    <string name="notification_channel_name">Auto Click Overlay</string>
+    <string name="notification_title">Auto clicker running</string>
+    <string name="notification_text">Hold your finger on the screen to auto tap there.</string>
+    <string name="overlay_permission_already_enabled">Overlay permission is already enabled.</string>
+    <string name="enable_overlay_permission_first">Enable overlay permission first.</string>
+</resources>

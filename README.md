@@ -1,25 +1,37 @@
-# Base64 Key-Value Editor
+# Idle KV Auto Clicker (Android)
 
-A simple React app to decode, edit, and re-encode custom base64 key-value strings for idle-kv.
+This repository now contains an Android app that repeatedly taps where you hold your finger.
 
-## Features
+## What it does
 
-- Paste encoded string (with 2-character prefix)
-- Edit decoded fields
-- Save/export, with prefix restored
+- Uses an Accessibility Service to dispatch rapid tap gestures.
+- Runs a full-screen overlay service.
+- While your finger is held down, it repeatedly taps at that exact screen position.
 
-## Setup
+## Build locally
 
+Requirements:
+
+- JDK 17
+- Android SDK (platform 34 + build tools)
+- Gradle 8+
+
+Build debug APK:
+
+```bash
+gradle assembleDebug
 ```
-npm install
-npm start
-```
 
-## Deploy to GitHub Pages
+APK output path:
 
-```
-npm run deploy
-```
+`/home/runner/work/idle-kv/idle-kv/app/build/outputs/apk/debug/app-debug.apk`
 
-The app will be available at:  
-https://Oatelaus.github.io/idle-kv
+## Device setup
+
+1. Install the debug APK.
+2. Open the app.
+3. Tap **Open Accessibility Settings** and enable **Idle KV Auto Clicker Service**.
+4. Tap **Enable Overlay Permission** and allow display over other apps.
+5. Tap **Start Auto Clicker Overlay**.
+6. In any screen, hold your finger where you want fast repeated taps.
+7. Return to app and tap **Stop Auto Clicker Overlay** to disable.
