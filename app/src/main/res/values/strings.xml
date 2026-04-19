@@ -11,4 +11,5 @@
     <string name="notification_text">Hold your finger on the screen to auto tap there.</string>
     <string name="overlay_permission_already_enabled">Overlay permission is already enabled.</string>
     <string name="enable_overlay_permission_first">Enable overlay permission first.</string>
+    <string name="failed_to_start_overlay">Could not start overlay on this device. Re-enable permissions and try again.</string>
 </resources>
