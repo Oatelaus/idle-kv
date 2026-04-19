@@ -26,6 +26,11 @@ APK output path:
 
 `app/build/outputs/apk/debug/app-debug.apk`
 
+## CI downloads
+
+- Every workflow run uploads `app-debug-apk` as an Actions artifact.
+- On pushes to `main`, CI also creates a prerelease and attaches the APK as a release asset.
+
 ## Device setup
 
 1. Install the debug APK.
