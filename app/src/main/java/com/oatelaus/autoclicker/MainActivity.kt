@@ -49,14 +49,18 @@ class MainActivity : AppCompatActivity() {
                     startService(intent)
                 }
             } catch (_: IllegalStateException) {
-                Toast.makeText(this, R.string.failed_to_start_overlay, Toast.LENGTH_LONG).show()
+                showOverlayStartError()
             } catch (_: SecurityException) {
-                Toast.makeText(this, R.string.failed_to_start_overlay, Toast.LENGTH_LONG).show()
+                showOverlayStartError()
             }
         }
 
         binding.stopOverlayButton.setOnClickListener {
             stopService(Intent(this, OverlayService::class.java))
         }
+    }
+
+    private fun showOverlayStartError() {
+        Toast.makeText(this, R.string.failed_to_start_overlay, Toast.LENGTH_LONG).show()
     }
 }
