@@ -24,7 +24,7 @@ gradle assembleDebug
 
 APK output path:
 
-`/home/runner/work/idle-kv/idle-kv/app/build/outputs/apk/debug/app-debug.apk`
+`app/build/outputs/apk/debug/app-debug.apk`
 
 ## Device setup
 
